@@ -103,7 +103,7 @@ export function StyleGuide() {
           <div className={styles.typoRow}>
             <div className={styles.typoLabel}>Desktop/Subtitles-1</div>
             <Typography variant="desktop-subtitles-1" color="fill_SY29LS">
-              A questions game to help solo travelers connect beyond &quot;where are you from?&quot;
+              A questions game to help travelers connect beyond &quot;where are you from?&quot;
             </Typography>
           </div>
           <div className={styles.typoRow}>

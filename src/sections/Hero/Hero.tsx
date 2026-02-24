@@ -16,7 +16,7 @@ export function Hero() {
           </h1>
           <p className={styles.heroSubtitle}>
             <Typography variant="desktop-subtitles-1" color="fill_SY29LS">
-              A questions game to help solo travelers connect beyond &quot;where are you from?&quot;
+              A questions game to help travelers connect beyond &quot;where are you from?&quot;
             </Typography>
           </p>
         </AnimateIn>
