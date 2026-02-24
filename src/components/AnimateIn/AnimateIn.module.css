@@ -1,0 +1,18 @@
+/* Apple-style scroll reveal: fade up into view */
+
+/* Layout: full width and flex-friendly so wrapper doesn't break section layouts */
+.animateIn {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animateIn.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

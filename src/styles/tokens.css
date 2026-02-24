@@ -1,0 +1,205 @@
+/**
+ * WeJustMet Landing Page — Design Tokens from Figma
+ * File: Landing-page, frame: Ready to develop (52:9)
+ * Colors use Figma fill IDs; typography uses Figma text style names.
+ */
+
+:root {
+  /* ---------- Colors (Figma fill IDs and values) ---------- */
+  --fill_3E2XJW: #E8F2E9;
+  --fill_24VORE: #FFFFFF;
+  --fill_BYI27M: #162719;
+  --fill_UF28T0: #28472D;
+  --fill_OYF0JJ: #C2A45C;
+  --fill_SY29LS: #536C57;
+  --fill_W478SF: #E7F2E9;
+  --fill_NMXQHG: rgba(232, 242, 233, 0.6);
+
+  /* Button component (98:119) — same values, Figma variable names */
+  --fill_O2LP7B: #28472D;   /* Primary bg; Secondary/Tertiary text */
+  --fill_E1R2NB: #E8F2E9;   /* Primary text */
+  --fill_GKQY9J: #FFFFFF;   /* Accent text */
+  --fill_C7RB2W: #C2A45C;   /* Accent bg */
+  /* Status overlays */
+  --button-state-hovered: rgba(0, 0, 0, 0.15);
+  --button-state-pressed: rgba(0, 0, 0, 0.3);
+  --button-state-disabled-opacity: 0.5;
+
+  /* Button sizes: fixed height S 32px, M 48px, L 64px; horizontal padding only */
+  --button-height-s: 32px;
+  --button-height-m: 48px;
+  --button-height-l: 64px;
+  --button-padding-x-s: 16px;
+  --button-padding-x-m: 32px;
+  --button-padding-x-l: 32px;
+  --button-gap-s: 8px;
+  --button-gap-m: 16px;
+  --button-gap-l: 16px;
+  --button-radius: 100px;
+
+  /* Button Secondary stroke (stroke_YRO0B6: 1px, #536C57 = fill_SY29LS) */
+  --button-secondary-stroke: 1px solid var(--fill_SY29LS);
+
+  /* Semantic aliases (reference Figma fills) */
+  --color-bg-primary: var(--fill_3E2XJW);
+  --color-text-on-dark: var(--fill_24VORE);
+  --color-text-primary: var(--fill_BYI27M);
+  --color-bg-accent: var(--fill_UF28T0);
+  --color-cta: var(--fill_OYF0JJ);
+  --color-text-secondary: var(--fill_SY29LS);
+  --color-focus-ring: var(--fill_OYF0JJ);
+  --color-border: rgba(22, 39, 25, 0.2);
+
+  /* ---------- Font family (Figma: Space Grotesk) ---------- */
+  --font-family-sans: "Space Grotesk", system-ui, sans-serif;
+
+  /* Base (for body / fallback) */
+  --font-size-base: 16px;
+  --line-height-normal: 1.5;
+
+  /* ---------- Desktop text styles (Figma names → CSS custom properties) ---------- */
+  /* Desktop/Capital letters: 500, 14px, 1.276em, 2%, UPPER */
+  --desktop-capital-letters-font-weight: 500;
+  --desktop-capital-letters-font-size: 14px;
+  --desktop-capital-letters-line-height: 1.276;
+  --desktop-capital-letters-letter-spacing: 0.02em;
+  --desktop-capital-letters-text-transform: uppercase;
+
+  /* Desktop/Heading: 700, 102px, 0.8627em, -7% */
+  --desktop-heading-font-weight: 700;
+  --desktop-heading-font-size: 102px;
+  --desktop-heading-line-height: 0.8627450980392157;
+  --desktop-heading-letter-spacing: -0.07em;
+
+  /* Desktop/Subtitles-1: 400, 32px, 1.3125em, -5% */
+  --desktop-subtitles-1-font-weight: 400;
+  --desktop-subtitles-1-font-size: 32px;
+  --desktop-subtitles-1-line-height: 1.3125;
+  --desktop-subtitles-1-letter-spacing: -0.05em;
+
+  /* Desktop/Subtitles-2: 500, 26px, 1.3077em, -7% */
+  --desktop-subtitles-2-font-weight: 500;
+  --desktop-subtitles-2-font-size: 26px;
+  --desktop-subtitles-2-line-height: 1.3076923076923077;
+  --desktop-subtitles-2-letter-spacing: -0.07em;
+
+  /* Desktop/Titles: 700, 64px, 1.015625em, -4% */
+  --desktop-titles-font-weight: 700;
+  --desktop-titles-font-size: 64px;
+  --desktop-titles-line-height: 1.015625;
+  --desktop-titles-letter-spacing: -0.04em;
+
+  /* Desktop/Card-texts: 500, 14px, 1.2857em, -2% */
+  --desktop-card-texts-font-weight: 500;
+  --desktop-card-texts-font-size: 14px;
+  --desktop-card-texts-line-height: 1.2857142857142858;
+  --desktop-card-texts-letter-spacing: -0.02em;
+
+  /* Desktop/Body-1: 400, 24px, 1.276em, -3% */
+  --desktop-body-1-font-weight: 400;
+  --desktop-body-1-font-size: 24px;
+  --desktop-body-1-line-height: 1.2760000228881836;
+  --desktop-body-1-letter-spacing: -0.03em;
+
+  /* Desktop/Body-2: 400, 20px, 1.4em, -2% */
+  --desktop-body-2-font-weight: 400;
+  --desktop-body-2-font-size: 20px;
+  --desktop-body-2-line-height: 1.4;
+  --desktop-body-2-letter-spacing: -0.02em;
+
+  /* Desktop/Body-3: 400, 14px, 1.2857em */
+  --desktop-body-3-font-weight: 400;
+  --desktop-body-3-font-size: 14px;
+  --desktop-body-3-line-height: 1.2857142857142858;
+
+  /* ---------- Mobile text styles ---------- */
+  /* Mobile/Capital letters: 500, 12px, 1.276em, 2%, UPPER */
+  --mobile-capital-letters-font-weight: 500;
+  --mobile-capital-letters-font-size: 12px;
+  --mobile-capital-letters-line-height: 1.2760000228881836;
+  --mobile-capital-letters-letter-spacing: 0.02em;
+  --mobile-capital-letters-text-transform: uppercase;
+
+  /* Mobile/Titles: 700, 58px, 0.931em, -7% */
+  --mobile-titles-font-weight: 700;
+  --mobile-titles-font-size: 58px;
+  --mobile-titles-line-height: 0.9310344827586207;
+  --mobile-titles-letter-spacing: -0.07em;
+
+  /* Mobile/Subtitle-2: 500, 20px, 1.4em, -5% */
+  --mobile-subtitle-2-font-weight: 500;
+  --mobile-subtitle-2-font-size: 20px;
+  --mobile-subtitle-2-line-height: 1.4;
+  --mobile-subtitle-2-letter-spacing: -0.05em;
+
+  /* Mobile/Body-1: 400, 18px, 1.276em, -3% */
+  --mobile-body-1-font-weight: 400;
+  --mobile-body-1-font-size: 18px;
+  --mobile-body-1-line-height: 1.2760000228881836;
+  --mobile-body-1-letter-spacing: -0.03em;
+
+  /* Mobile/Body-2: 400, 16px, 1.375em, -2% */
+  --mobile-body-2-font-weight: 400;
+  --mobile-body-2-font-size: 16px;
+  --mobile-body-2-line-height: 1.375;
+  --mobile-body-2-letter-spacing: -0.02em;
+
+  /* ---------- Spacing (from Figma layout padding) ---------- */
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-80: 80px;
+  --space-128: 128px;
+  --space-140: 140px;
+
+  --section-padding-y-mobile: 80px;
+  --section-padding-y-tablet-s: 80px;
+  --section-padding-y-tablet-l: 80px;
+  --section-padding-y-desktop: 80px;
+  --section-padding-y-desktop-xl: 140px;
+
+  --section-padding-x-mobile: 24px;
+  --section-padding-x-tablet-s: 24px;
+  --section-padding-x-tablet-l: 48px;
+  --section-padding-x-desktop: 80px;
+  --section-padding-x-desktop-xl: 80px;
+
+  /* ---------- Border radius (from Figma) ---------- */
+  --radius-18: 18px;
+  --radius-64: 64px;
+  --radius-100: 100px;
+  --radius-full: 9999px;
+
+  /* ---------- Shadows (from Figma effect_6AC1X9) ---------- */
+  --shadow-card: 0px -3px 18px 8px rgba(0, 0, 0, 0.24);
+
+  /* ---------- Breakpoints ---------- */
+  --bp-mobile: 600px;
+  --bp-tablet-s: 960px;
+  --bp-tablet-l: 1280px;
+  --bp-desktop: 1440px;
+
+  --container-max: 1440px;
+
+  /* Hero cards — aspect ratio 260:152 (Figma), desktop gap 128px, mobile stacked */
+  --hero-card-radius: 18px;
+  --hero-card-radius-mobile: 24px;
+  --hero-cards-gap-desktop: 128px;
+  --hero-card-width: 260px;
+  --hero-card-height: 152px;
+  /* Mobile: fixed positions (Figma frame 2046-4146), same angles as desktop */
+  --hero-card-width-mobile: 320px;
+  --hero-card-mobile-top-1: 0;
+  --hero-card-mobile-top-2: 56px;
+  --hero-card-mobile-top-3: 112px;
+  --hero-card-mobile-left-1: 50%;
+  --hero-card-mobile-left-2: 50%;
+  --hero-card-mobile-left-3: 50%;
+  --hero-cards-mobile-stack-height: 280px;
+}

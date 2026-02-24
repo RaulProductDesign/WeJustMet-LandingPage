@@ -1,0 +1,156 @@
+/* Examples section — Figma node 2046-3681: titles + comparison grid */
+
+.examplesSection {
+  padding-top: 0;
+  padding-bottom: var(--space-140);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-32);
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  width: 100%;
+  text-align: left;
+}
+
+.title {
+  margin: 0;
+}
+
+.title :global([class*="desktop-titles"]) {
+  font-size: var(--desktop-titles-font-size);
+  line-height: var(--desktop-titles-line-height);
+  letter-spacing: var(--desktop-titles-letter-spacing);
+  color: var(--fill_BYI27M);
+}
+
+.subtitle {
+  margin: 0;
+}
+
+.subtitle :global([class*="desktop-subtitles-1"]) {
+  font-size: var(--desktop-subtitles-1-font-size);
+  line-height: var(--desktop-subtitles-1-line-height);
+  letter-spacing: var(--desktop-subtitles-1-letter-spacing);
+  color: var(--fill_SY29LS);
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  width: 100%;
+}
+
+/* AnimateIn inside grid must match grid layout so rows stack correctly */
+.grid :global(.animate-in) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.cardBad,
+.cardGood {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--space-24);
+  flex: 1;
+  min-width: 0;
+  border-radius: 24px;
+}
+
+.cardBad {
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.cardBad .cardLabel :global([class*="desktop-capital-letters"]) {
+  opacity: 0.7;
+}
+
+.cardGood {
+  background-color: var(--fill_UF28T0);
+}
+
+.cardLabel {
+  display: block;
+}
+
+.cardQuestion {
+  margin: 0;
+}
+
+.cardQuestion :global([class*="desktop-body-1"]) {
+  font-size: var(--desktop-body-1-font-size);
+  line-height: var(--desktop-body-1-line-height);
+  letter-spacing: var(--desktop-body-1-letter-spacing);
+}
+
+/* Mobile — Figma node 2046-4041: row stays side-by-side, 8px gap, 16px card padding/radius */
+@media (max-width: 959px) {
+  .titles {
+    text-align: center;
+  }
+
+  .title :global([class*="desktop-titles"]) {
+    font-size: var(--mobile-titles-font-size);
+    line-height: var(--mobile-titles-line-height);
+    letter-spacing: var(--mobile-titles-letter-spacing);
+    text-align: center;
+  }
+
+  .subtitle :global([class*="desktop-subtitles-1"]) {
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.05em;
+    text-align: center;
+  }
+
+  .grid,
+  .grid :global(.animate-in) {
+    gap: var(--space-16);
+  }
+
+  .row {
+    gap: var(--space-8);
+  }
+
+  .cardBad,
+  .cardGood {
+    padding: var(--space-16);
+    border-radius: 16px;
+  }
+
+  .cardLabel :global([class*="desktop-capital-letters"]) {
+    font-size: var(--mobile-capital-letters-font-size);
+    line-height: var(--mobile-capital-letters-line-height);
+    letter-spacing: var(--mobile-capital-letters-letter-spacing);
+  }
+
+  .cardQuestion :global([class*="desktop-body-1"]) {
+    font-size: var(--mobile-body-1-font-size);
+    line-height: var(--mobile-body-1-line-height);
+    letter-spacing: var(--mobile-body-1-letter-spacing);
+  }
+}

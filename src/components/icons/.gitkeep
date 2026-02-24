@@ -1,0 +1,3 @@
+# Place your SVG icon files here.
+# Import and use them in components, e.g.:
+# import { ReactComponent as IconName } from './icons/icon-name.svg'

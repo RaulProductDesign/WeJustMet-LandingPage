@@ -1,0 +1,95 @@
+/* Hero — Figma: centered at all breakpoints, max-width 1440px, 16px between heading lines */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 100px var(--section-padding-x-mobile) 140px;
+}
+
+.heroInner {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-72);
+  margin: 0 auto;
+}
+
+.headingTexts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+}
+
+/* Single block: line-height defines spacing between the two lines, no extra gap */
+.heroHeading {
+  text-align: center;
+  margin: 0;
+}
+
+.heroHeading :global([class*="desktop-heading"]) {
+  font-size: var(--desktop-heading-font-size);
+  height: fit-content;
+}
+
+@media (max-width: 959px) {
+  .heroHeading :global([class*="desktop-heading"]) {
+    font-size: var(--mobile-titles-font-size);
+    line-height: var(--mobile-titles-line-height);
+    letter-spacing: var(--mobile-titles-letter-spacing);
+  }
+}
+
+.heroSubtitle {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+.heroSubtitle :global([class*="desktop-subtitles-1"]) {
+  font-size: var(--desktop-subtitles-1-font-size);
+  height: 100%;
+}
+
+@media (max-width: 959px) {
+  .heroSubtitle :global([class*="desktop-subtitles-1"]) {
+    font-size: var(--mobile-body-1-font-size);
+    line-height: var(--mobile-body-1-line-height);
+  }
+}
+
+@media (min-width: 960px) {
+  .hero {
+    padding-left: var(--section-padding-x-tablet-l);
+    padding-right: var(--section-padding-x-tablet-l);
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    padding: 100px var(--section-padding-x-desktop) 140px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    padding-left: var(--section-padding-x-desktop-xl);
+    padding-right: var(--section-padding-x-desktop-xl);
+  }
+}
+
+@media (max-width: 599px) {
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}

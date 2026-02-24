@@ -1,0 +1,164 @@
+/**
+ * Button — Figma component 98:119
+ * Type: Primary | Accent | Secondary | Tertiary
+ * Status: Default | Hovered | Pressed | Disabled
+ * Size: S | M | L
+ * Variable names and values from Figma (fill_O2LP7B, fill_E1R2NB, fill_GKQY9J, fill_C7RB2W).
+ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap-m);
+  font-family: var(--font-family-sans);
+  font-weight: var(--desktop-capital-letters-font-weight);
+  font-size: var(--desktop-capital-letters-font-size);
+  line-height: var(--desktop-capital-letters-line-height);
+  letter-spacing: var(--desktop-capital-letters-letter-spacing);
+  text-transform: var(--desktop-capital-letters-text-transform);
+  border-radius: var(--button-radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s, opacity 0.2s;
+  position: relative;
+  text-decoration: none;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--button-radius);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--fill_BYI27M);
+  outline-offset: 2px;
+}
+
+/* ---------- Size S: fixed height 32px ---------- */
+.size_S {
+  height: var(--button-height-s);
+  min-height: var(--button-height-s);
+  padding: 0 var(--button-padding-x-s);
+  gap: var(--button-gap-s);
+}
+
+.size_S.iconOnly {
+  width: var(--button-height-s);
+  min-width: var(--button-height-s);
+}
+
+/* ---------- Size M: fixed height 48px ---------- */
+.size_M {
+  height: var(--button-height-m);
+  min-height: var(--button-height-m);
+  padding: 0 var(--button-padding-x-m);
+  gap: var(--button-gap-m);
+}
+
+.size_M.iconOnly {
+  width: var(--button-height-m);
+  min-width: var(--button-height-m);
+}
+
+/* ---------- Size L: fixed height 64px ---------- */
+.size_L {
+  height: var(--button-height-l);
+  min-height: var(--button-height-l);
+  padding: 0 var(--button-padding-x-l);
+  gap: var(--button-gap-l);
+}
+
+.size_L.iconOnly {
+  width: var(--button-height-l);
+  min-width: var(--button-height-l);
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+/* ---------- Type=Primary: fill_O2LP7B bg, fill_E1R2NB text ---------- */
+.type_Primary {
+  background-color: var(--fill_O2LP7B);
+  color: var(--fill_E1R2NB);
+}
+
+.type_Primary:hover:not(.status_Disabled)::after {
+  background-color: var(--button-state-hovered);
+  opacity: 1;
+}
+
+.type_Primary:active:not(.status_Disabled)::after {
+  background-color: var(--button-state-pressed);
+  opacity: 1;
+}
+
+/* ---------- Type=Accent: fill_C7RB2W bg, fill_GKQY9J text ---------- */
+.type_Accent {
+  background-color: var(--fill_C7RB2W);
+  color: var(--fill_GKQY9J);
+}
+
+.type_Accent:hover:not(.status_Disabled)::after {
+  background-color: var(--button-state-hovered);
+  opacity: 1;
+}
+
+.type_Accent:active:not(.status_Disabled)::after {
+  background-color: var(--button-state-pressed);
+  opacity: 1;
+}
+
+/* ---------- Type=Secondary: transparent bg, fill_O2LP7B text, stroke_YRO0B6 (1px #536C57) ---------- */
+.type_Secondary {
+  background-color: transparent;
+  color: var(--fill_O2LP7B);
+  border: var(--button-secondary-stroke);
+}
+
+.type_Secondary:hover:not(.status_Disabled)::after {
+  background-color: var(--button-state-hovered);
+  opacity: 1;
+}
+
+.type_Secondary:active:not(.status_Disabled)::after {
+  background-color: var(--button-state-pressed);
+  opacity: 1;
+}
+
+/* ---------- Type=Tertiary: transparent bg, fill_O2LP7B text ---------- */
+.type_Tertiary {
+  background-color: transparent;
+  color: var(--fill_O2LP7B);
+}
+
+.type_Tertiary:hover:not(.status_Disabled)::after {
+  background-color: var(--button-state-hovered);
+  opacity: 1;
+}
+
+.type_Tertiary:active:not(.status_Disabled)::after {
+  background-color: var(--button-state-pressed);
+  opacity: 1;
+}
+
+/* ---------- Status=Disabled ---------- */
+.status_Disabled {
+  cursor: not-allowed;
+  opacity: var(--button-state-disabled-opacity);
+}
+
+.status_Disabled::after {
+  display: none;
+}

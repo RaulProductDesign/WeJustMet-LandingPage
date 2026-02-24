@@ -1,0 +1,98 @@
+/* Hero cards — aspect ratio 260:152 (Figma), desktop 128px gap, mobile stacked */
+
+.cardsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--hero-cards-gap-desktop);
+  width: 100%;
+  padding: 0 var(--space-16);
+}
+
+.card {
+  flex-shrink: 0;
+  width: var(--hero-card-width);
+  aspect-ratio: 260 / 152;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: var(--space-16) var(--space-24);
+  background-color: var(--fill_UF28T0);
+  border-radius: var(--hero-card-radius);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.15s ease-out;
+}
+
+/* Desktop: Figma angles -15°, 5°, 21° + scroll-based rotation */
+.cardRotate1 {
+  transform: rotate(calc(-15deg + var(--scroll-rotation, 0deg)));
+}
+
+.cardRotate2 {
+  transform: rotate(calc(5deg + var(--scroll-rotation, 0deg)));
+}
+
+.cardRotate3 {
+  transform: rotate(calc(21deg + var(--scroll-rotation, 0deg)));
+}
+
+.cardInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.cardInner :global([class*="desktop-card-texts"]) {
+  font-size: var(--desktop-card-texts-font-size);
+  line-height: var(--desktop-card-texts-line-height);
+}
+
+/* Mobile: fixed positions per Figma (frame 2046-4146), same angles as desktop (-15°, 5°, 21°) */
+@media (max-width: 959px) {
+  .cardsRow {
+    position: relative;
+    width: 100%;
+    min-height: var(--hero-cards-mobile-stack-height);
+    padding: 0 var(--space-16);
+  }
+
+  .card {
+    position: absolute;
+    width: min(var(--hero-card-width-mobile), calc(100% - var(--space-16) * 2));
+    max-width: 340px;
+    aspect-ratio: 260 / 152;
+    padding: var(--space-24);
+    border-radius: var(--hero-card-radius-mobile);
+    box-shadow: 0px -4px 24px 11px rgba(0, 0, 0, 0.24);
+    left: var(--hero-card-mobile-left-1);
+    top: var(--hero-card-mobile-top-1);
+  }
+
+  /* Fixed position per card + scroll rotation */
+  .cardRotate1 {
+    left: var(--hero-card-mobile-left-1);
+    top: var(--hero-card-mobile-top-1);
+    transform: translateX(-50%) rotate(calc(-15deg + var(--scroll-rotation, 0deg)));
+    z-index: 1;
+  }
+
+  /* Card 2: front (z-index 3), 32px to the right */
+  .cardRotate2 {
+    left: var(--hero-card-mobile-left-2);
+    top: var(--hero-card-mobile-top-2);
+    transform: translateX(calc(-50% + 32px)) rotate(calc(5deg + var(--scroll-rotation, 0deg)));
+    z-index: 3;
+  }
+
+  /* Card 3: middle (z-index 2), 32px to the left */
+  .cardRotate3 {
+    left: var(--hero-card-mobile-left-3);
+    top: var(--hero-card-mobile-top-3);
+    transform: translateX(calc(-50% - 32px)) rotate(calc(21deg + var(--scroll-rotation, 0deg)));
+    z-index: 2;
+  }
+}
+

@@ -1,0 +1,195 @@
+/* Nav bar — Figma: padding 16px, fill_3E2XJW. Desktop nav + mobile burger; menu slides down from top (white panel). */
+
+.navBar {
+  width: 100%;
+  background-color: rgba(232, 242, 233, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--space-16) var(--section-padding-x-mobile);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  position: relative;
+  z-index: 101;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoImg {
+  display: block;
+  height: 16px;
+  width: auto;
+  max-width: 154px;
+}
+
+.logoFallback {
+  display: none;
+  font-family: var(--font-family-sans);
+  font-weight: var(--desktop-titles-font-weight);
+  font-size: var(--desktop-body-2-font-size);
+  color: var(--fill_BYI27M);
+}
+
+/* ---------- Desktop nav (visible from 960px+) ---------- */
+.navDesktop {
+  display: none;
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--button-height-s);
+  padding: 0 var(--button-padding-x-s);
+  font-family: var(--font-family-sans);
+  font-weight: var(--desktop-capital-letters-font-weight);
+  font-size: var(--desktop-capital-letters-font-size);
+  line-height: var(--desktop-capital-letters-line-height);
+  letter-spacing: var(--desktop-capital-letters-letter-spacing);
+  text-transform: var(--desktop-capital-letters-text-transform);
+  color: var(--fill_UF28T0);
+  text-decoration: none;
+  border-radius: var(--button-radius);
+  transition: opacity 0.2s;
+}
+
+.navLink:hover {
+  opacity: 0.85;
+}
+
+/* ---------- Mobile: burger button (CSS bars, animates to X) ---------- */
+.burgerButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--fill_BYI27M);
+  border-radius: var(--radius-18);
+  transition: background-color 0.2s;
+}
+
+.burgerButton:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.burgerBar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.25s ease;
+}
+
+/* Burger → X when open */
+.burgerButton[aria-expanded="true"] .burgerBar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burgerButton[aria-expanded="true"] .burgerBar:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerButton[aria-expanded="true"] .burgerBar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---------- Mobile: full-height panel slides down from top, white bg, buttons aligned to top ---------- */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--fill_24VORE);
+  z-index: 98;
+  transform: translateY(-100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0.35s;
+  box-shadow: 0 12px 24px rgba(22, 39, 25, 0.1);
+}
+
+.mobileMenu[data-open] {
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--space-8);
+  padding: 80px var(--section-padding-x-mobile) var(--space-32);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  min-height: 100%;
+  width: 100%;
+}
+
+.mobileNavLink {
+  width: 100%;
+  justify-content: center;
+}
+
+.mobileCta {
+  margin-top: var(--space-8);
+  justify-content: center;
+  width: 100%;
+}
+
+/* ---------- Breakpoints (desktop lateral padding 48px) ---------- */
+@media (min-width: 960px) {
+  .navBar {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .navDesktop {
+    display: flex;
+  }
+
+  .burgerButton {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none !important;
+  }
+}

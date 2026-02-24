@@ -1,0 +1,117 @@
+/* Figma text styles — same names and values */
+
+.typography {
+  margin: 0;
+  font-family: var(--font-family-sans);
+}
+
+/* Desktop */
+.desktop-capital-letters {
+  font-weight: var(--desktop-capital-letters-font-weight);
+  font-size: var(--desktop-capital-letters-font-size);
+  line-height: var(--desktop-capital-letters-line-height);
+  letter-spacing: var(--desktop-capital-letters-letter-spacing);
+  text-transform: var(--desktop-capital-letters-text-transform);
+}
+
+.desktop-heading {
+  font-weight: var(--desktop-heading-font-weight);
+  font-size: var(--desktop-heading-font-size);
+  line-height: var(--desktop-heading-line-height);
+  letter-spacing: var(--desktop-heading-letter-spacing);
+}
+
+.desktop-subtitles-1 {
+  font-weight: var(--desktop-subtitles-1-font-weight);
+  font-size: var(--desktop-subtitles-1-font-size);
+  line-height: var(--desktop-subtitles-1-line-height);
+  letter-spacing: var(--desktop-subtitles-1-letter-spacing);
+}
+
+.desktop-subtitles-2 {
+  font-weight: var(--desktop-subtitles-2-font-weight);
+  font-size: var(--desktop-subtitles-2-font-size);
+  line-height: var(--desktop-subtitles-2-line-height);
+  letter-spacing: var(--desktop-subtitles-2-letter-spacing);
+}
+
+.desktop-titles {
+  font-weight: var(--desktop-titles-font-weight);
+  font-size: var(--desktop-titles-font-size);
+  line-height: var(--desktop-titles-line-height);
+  letter-spacing: var(--desktop-titles-letter-spacing);
+}
+
+.desktop-card-texts {
+  font-weight: var(--desktop-card-texts-font-weight);
+  font-size: var(--desktop-card-texts-font-size);
+  line-height: var(--desktop-card-texts-line-height);
+  letter-spacing: var(--desktop-card-texts-letter-spacing);
+}
+
+.desktop-body-1 {
+  font-weight: var(--desktop-body-1-font-weight);
+  font-size: var(--desktop-body-1-font-size);
+  line-height: var(--desktop-body-1-line-height);
+  letter-spacing: var(--desktop-body-1-letter-spacing);
+}
+
+.desktop-body-2 {
+  font-weight: var(--desktop-body-2-font-weight);
+  font-size: var(--desktop-body-2-font-size);
+  line-height: var(--desktop-body-2-line-height);
+  letter-spacing: var(--desktop-body-2-letter-spacing);
+}
+
+.desktop-body-3 {
+  font-weight: var(--desktop-body-3-font-weight);
+  font-size: var(--desktop-body-3-font-size);
+  line-height: var(--desktop-body-3-line-height);
+}
+
+/* Mobile (applied at breakpoint in components or via variant) */
+.mobile-capital-letters {
+  font-weight: var(--mobile-capital-letters-font-weight);
+  font-size: var(--mobile-capital-letters-font-size);
+  line-height: var(--mobile-capital-letters-line-height);
+  letter-spacing: var(--mobile-capital-letters-letter-spacing);
+  text-transform: var(--mobile-capital-letters-text-transform);
+}
+
+.mobile-titles {
+  font-weight: var(--mobile-titles-font-weight);
+  font-size: var(--mobile-titles-font-size);
+  line-height: var(--mobile-titles-line-height);
+  letter-spacing: var(--mobile-titles-letter-spacing);
+}
+
+.mobile-subtitle-2 {
+  font-weight: var(--mobile-subtitle-2-font-weight);
+  font-size: var(--mobile-subtitle-2-font-size);
+  line-height: var(--mobile-subtitle-2-line-height);
+  letter-spacing: var(--mobile-subtitle-2-letter-spacing);
+}
+
+.mobile-body-1 {
+  font-weight: var(--mobile-body-1-font-weight);
+  font-size: var(--mobile-body-1-font-size);
+  line-height: var(--mobile-body-1-line-height);
+  letter-spacing: var(--mobile-body-1-letter-spacing);
+}
+
+.mobile-body-2 {
+  font-weight: var(--mobile-body-2-font-weight);
+  font-size: var(--mobile-body-2-font-size);
+  line-height: var(--mobile-body-2-line-height);
+  letter-spacing: var(--mobile-body-2-letter-spacing);
+}
+
+/* Colors (Figma fills) */
+.color-fill_3E2XJW { color: var(--fill_3E2XJW); }
+.color-fill_24VORE { color: var(--fill_24VORE); }
+.color-fill_BYI27M { color: var(--fill_BYI27M); }
+.color-fill_UF28T0 { color: var(--fill_UF28T0); }
+.color-fill_OYF0JJ { color: var(--fill_OYF0JJ); }
+.color-fill_SY29LS { color: var(--fill_SY29LS); }
+.color-fill_W478SF { color: var(--fill_W478SF); }
+.color-fill_NMXQHG { color: var(--fill_NMXQHG); }

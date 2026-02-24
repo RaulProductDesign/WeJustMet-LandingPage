@@ -1,0 +1,211 @@
+/* FAQ section — Figma node 2046-3753: titles + accordion questions */
+
+.faqSection {
+  padding-top: 0;
+  padding-bottom: var(--space-140);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: var(--space-32);
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+}
+
+.title :global([class*="desktop-titles"]) {
+  font-size: var(--desktop-titles-font-size);
+  line-height: var(--desktop-titles-line-height);
+  letter-spacing: var(--desktop-titles-letter-spacing);
+  color: var(--fill_BYI27M);
+}
+
+.subtitle {
+  margin: 0;
+}
+
+.subtitle :global([class*="desktop-subtitles-1"]) {
+  font-size: var(--desktop-subtitles-1-font-size);
+  line-height: var(--desktop-subtitles-1-line-height);
+  letter-spacing: var(--desktop-subtitles-1-letter-spacing);
+  color: var(--fill_SY29LS);
+}
+
+/* Stagger: AnimateIn wrapper does not fade; FAQ items animate in order with delay */
+.faqSection .wrapper > .list :global(.animate-in) {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.faqSection .wrapper > .list :global(.animate-in) .item {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.faqSection .wrapper > .list :global(.animate-in) .item:nth-child(1) { transition-delay: 0ms; }
+.faqSection .wrapper > .list :global(.animate-in) .item:nth-child(2) { transition-delay: 60ms; }
+.faqSection .wrapper > .list :global(.animate-in) .item:nth-child(3) { transition-delay: 120ms; }
+.faqSection .wrapper > .list :global(.animate-in) .item:nth-child(4) { transition-delay: 180ms; }
+.faqSection .wrapper > .list :global(.animate-in) .item:nth-child(5) { transition-delay: 240ms; }
+.faqSection .wrapper > .list :global(.animate-in) .item:nth-child(6) { transition-delay: 300ms; }
+
+.faqSection .wrapper > .list :global(.animate-in-visible) .item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  flex: 1;
+  min-width: 0;
+}
+
+.list :global(.animate-in) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  flex: 1;
+  min-width: 0;
+}
+
+.item {
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  transition: box-shadow 0.15s ease;
+}
+
+.item:hover {
+  box-shadow: inset 0 0 0 1px var(--color-border);
+}
+
+.trigger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  gap: var(--space-24);
+  padding: var(--space-32);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font: inherit;
+  color: inherit;
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.questionText {
+  flex: 1;
+  min-width: 0;
+}
+
+.questionText :global([class*="desktop-subtitles-2"]) {
+  font-size: var(--desktop-subtitles-2-font-size);
+  line-height: var(--desktop-subtitles-2-line-height);
+  letter-spacing: var(--desktop-subtitles-2-letter-spacing);
+  color: var(--fill_BYI27M);
+}
+
+.chevronWrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--fill_BYI27M);
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.item[data-open="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.answerWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s ease;
+}
+
+.answerWrapper[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.answer {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.answer > * {
+  padding: 0 var(--space-32) var(--space-32);
+  padding-top: 0;
+}
+
+.answerText {
+  white-space: pre-line;
+  line-height: var(--desktop-body-2-line-height);
+  margin: 0;
+}
+
+/* Paragraph spacing (double newline) = one line height */
+.answerText :global([class*="desktop-body-2"]) {
+  font-size: var(--desktop-body-2-font-size);
+  line-height: var(--desktop-body-2-line-height);
+  letter-spacing: var(--desktop-body-2-letter-spacing);
+  color: var(--fill_SY29LS);
+  margin: 0;
+  display: block;
+}
+
+@media (max-width: 959px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .titles {
+    flex: none;
+  }
+
+  .title :global([class*="desktop-titles"]) {
+    font-size: var(--mobile-titles-font-size);
+    line-height: var(--mobile-titles-line-height);
+    letter-spacing: var(--mobile-titles-letter-spacing);
+  }
+
+  .subtitle :global([class*="desktop-subtitles-1"]) {
+    font-size: var(--mobile-body-1-font-size);
+    line-height: var(--mobile-body-1-line-height);
+  }
+}
