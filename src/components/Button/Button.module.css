@@ -94,9 +94,11 @@
   color: var(--fill_E1R2NB);
 }
 
-.type_Primary:hover:not(.status_Disabled)::after {
-  background-color: var(--button-state-hovered);
-  opacity: 1;
+@media (hover: hover) {
+  .type_Primary:hover:not(.status_Disabled)::after {
+    background-color: var(--button-state-hovered);
+    opacity: 1;
+  }
 }
 
 .type_Primary:active:not(.status_Disabled)::after {
@@ -110,9 +112,11 @@
   color: var(--fill_GKQY9J);
 }
 
-.type_Accent:hover:not(.status_Disabled)::after {
-  background-color: var(--button-state-hovered);
-  opacity: 1;
+@media (hover: hover) {
+  .type_Accent:hover:not(.status_Disabled)::after {
+    background-color: var(--button-state-hovered);
+    opacity: 1;
+  }
 }
 
 .type_Accent:active:not(.status_Disabled)::after {
@@ -127,9 +131,11 @@
   border: var(--button-secondary-stroke);
 }
 
-.type_Secondary:hover:not(.status_Disabled)::after {
-  background-color: var(--button-state-hovered);
-  opacity: 1;
+@media (hover: hover) {
+  .type_Secondary:hover:not(.status_Disabled)::after {
+    background-color: var(--button-state-hovered);
+    opacity: 1;
+  }
 }
 
 .type_Secondary:active:not(.status_Disabled)::after {
@@ -143,9 +149,11 @@
   color: var(--fill_O2LP7B);
 }
 
-.type_Tertiary:hover:not(.status_Disabled)::after {
-  background-color: var(--button-state-hovered);
-  opacity: 1;
+@media (hover: hover) {
+  .type_Tertiary:hover:not(.status_Disabled)::after {
+    background-color: var(--button-state-hovered);
+    opacity: 1;
+  }
 }
 
 .type_Tertiary:active:not(.status_Disabled)::after {
