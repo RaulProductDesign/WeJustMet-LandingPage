@@ -124,8 +124,9 @@
   }
 
   .subtitle :global([class*="desktop-subtitles-1"]) {
-    font-size: var(--mobile-body-1-font-size);
-    line-height: var(--mobile-body-1-line-height);
+    font-size: var(--mobile-subtitles-1-font-size);
+    line-height: var(--mobile-subtitles-1-line-height);
+    letter-spacing: var(--mobile-subtitles-1-letter-spacing);
     text-align: center;
   }
 

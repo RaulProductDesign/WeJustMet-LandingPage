@@ -14,6 +14,7 @@ export type TypographyVariant =
   | "desktop-body-3"
   | "mobile-capital-letters"
   | "mobile-titles"
+  | "mobile-subtitles-1"
   | "mobile-subtitle-2"
   | "mobile-body-1"
   | "mobile-body-2";
@@ -48,6 +49,7 @@ const defaultTag: Record<TypographyVariant, "h1" | "h2" | "h3" | "p" | "span" | 
   "desktop-body-3": "span",
   "mobile-capital-letters": "span",
   "mobile-titles": "h2",
+  "mobile-subtitles-1": "p",
   "mobile-subtitle-2": "p",
   "mobile-body-1": "p",
   "mobile-body-2": "p",

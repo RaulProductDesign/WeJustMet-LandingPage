@@ -1,0 +1,72 @@
+/* Terms & Conditions page — same structure as Privacy Policy */
+
+.main {
+  min-height: 100vh;
+  padding-top: calc(var(--space-80) / 2);
+  padding-bottom: var(--space-140);
+}
+
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 var(--space-16);
+}
+
+.updated {
+  margin: 0 0 var(--space-48);
+}
+
+.intro {
+  margin: 0 0 var(--space-48);
+}
+
+.section {
+  margin-bottom: var(--space-48);
+}
+
+.sectionTitle {
+  display: block;
+  margin: 0 0 var(--space-16);
+}
+
+.section p {
+  margin: 0 0 var(--space-16);
+}
+
+.section p:last-of-type {
+  margin-bottom: 0;
+}
+
+.list {
+  margin: var(--space-16) 0;
+  padding-left: var(--space-24);
+  color: var(--fill_BYI27M);
+  font-family: var(--font-family-sans);
+  font-size: var(--desktop-body-2-font-size);
+  line-height: var(--desktop-body-2-line-height);
+  letter-spacing: var(--desktop-body-2-letter-spacing);
+}
+
+.list li {
+  margin-bottom: var(--space-8);
+}
+
+.list li:last-child {
+  margin-bottom: 0;
+}
+
+.link {
+  color: var(--fill_UF28T0);
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: var(--fill_OYF0JJ);
+}
+
+.backWrap {
+  margin-top: var(--space-64);
+}

@@ -126,7 +126,13 @@
   --mobile-titles-line-height: 0.9310344827586207;
   --mobile-titles-letter-spacing: -0.07em;
 
-  /* Mobile/Subtitle-2: 500, 20px, 1.4em, -5% */
+  /* Mobile/Subtitles-1: 400, 24px, 1.25em, -5% (Figma Ready to develop 52:9) */
+  --mobile-subtitles-1-font-weight: 400;
+  --mobile-subtitles-1-font-size: 24px;
+  --mobile-subtitles-1-line-height: 1.25;
+  --mobile-subtitles-1-letter-spacing: -0.05em;
+
+  /* Mobile/Subtitle-2: 500, 20px, 1.4em, -5% (Figma Ready to develop 52:9) */
   --mobile-subtitle-2-font-weight: 500;
   --mobile-subtitle-2-font-size: 20px;
   --mobile-subtitle-2-line-height: 1.4;

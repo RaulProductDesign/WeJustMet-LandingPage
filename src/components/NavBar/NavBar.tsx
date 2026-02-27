@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "../Button";
 import styles from "./NavBar.module.css";
 
 const NAV_LINKS = [
-  { label: "How to play", href: "#how-to-play" },
-  { label: "FAQ", href: "#faq" },
+  { label: "How to play", hash: "how-to-play" },
+  { label: "FAQ", hash: "faq" },
 ];
+
+/** Link to landing page section; from subpages navigates to / then scrolls */
+function navToSection(hash: string) {
+  return `/#${hash}` as const;
+}
 
 export function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,7 +42,7 @@ export function NavBar() {
   return (
     <header className={styles.navBar} role="banner">
       <div className={styles.container}>
-        <a href="/" className={styles.logoLink} aria-label="WeJustMet home">
+        <Link to="/" className={styles.logoLink} aria-label="WeJustMet home">
           <img
             src="/logo/Logo-Horizontal.svg"
             alt="WeJustMet"
@@ -52,18 +58,18 @@ export function NavBar() {
           <span className={styles.logoFallback} aria-hidden>
             WeJustMet
           </span>
-        </a>
+        </Link>
 
         {/* Desktop: nav links + Download CTA */}
         <nav className={styles.navDesktop} aria-label="Main navigation">
           <div className={styles.navLinks}>
-            {NAV_LINKS.map(({ label, href }) => (
-              <a key={href} href={href} className={styles.navLink}>
+            {NAV_LINKS.map(({ label, hash }) => (
+              <Link key={hash} to={navToSection(hash)} className={styles.navLink}>
                 {label}
-              </a>
+              </Link>
             ))}
           </div>
-          <Button variant="Accent" size="M" href="#download">
+          <Button variant="Accent" size="M" href={navToSection("download")}>
             Download
           </Button>
         </nav>
@@ -94,12 +100,12 @@ export function NavBar() {
         aria-label="Menu"
       >
         <nav className={styles.mobileNav} aria-label="Mobile navigation">
-          {NAV_LINKS.map(({ label, href }) => (
+          {NAV_LINKS.map(({ label, hash }) => (
             <Button
-              key={href}
+              key={hash}
               variant="Tertiary"
               size="M"
-              href={href}
+              href={navToSection(hash)}
               className={styles.mobileNavLink}
               onClick={closeMenu}
             >
@@ -109,7 +115,7 @@ export function NavBar() {
           <Button
             variant="Accent"
             size="M"
-            href="#download"
+            href={navToSection("download")}
             className={styles.mobileCta}
             onClick={closeMenu}
           >

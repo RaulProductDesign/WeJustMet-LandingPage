@@ -89,7 +89,7 @@
 
 .item {
   border: 1px solid var(--color-border);
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -109,7 +109,7 @@
   align-items: center;
   align-self: stretch;
   gap: var(--space-24);
-  padding: var(--space-32);
+  padding: var(--space-24);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -170,7 +170,7 @@
 }
 
 .answer > * {
-  padding: 0 var(--space-32) var(--space-32);
+  padding: 0 var(--space-24) var(--space-24);
   padding-top: 0;
 }
 
@@ -200,6 +200,13 @@
     flex: none;
   }
 
+  /* Title and subtitle are inside AnimateIn; gap must be on that wrapper */
+  .titles :global(.animate-in) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
   .title :global([class*="desktop-titles"]) {
     font-size: var(--mobile-titles-font-size);
     line-height: var(--mobile-titles-line-height);
@@ -207,7 +214,14 @@
   }
 
   .subtitle :global([class*="desktop-subtitles-1"]) {
-    font-size: var(--mobile-body-1-font-size);
-    line-height: var(--mobile-body-1-line-height);
+    font-size: var(--mobile-subtitles-1-font-size);
+    line-height: var(--mobile-subtitles-1-line-height);
+    letter-spacing: var(--mobile-subtitles-1-letter-spacing);
+  }
+
+  .questionText :global([class*="desktop-subtitles-2"]) {
+    font-size: var(--mobile-subtitle-2-font-size);
+    line-height: var(--mobile-subtitle-2-line-height);
+    letter-spacing: var(--mobile-subtitle-2-letter-spacing);
   }
 }

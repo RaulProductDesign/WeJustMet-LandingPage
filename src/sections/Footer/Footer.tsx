@@ -1,14 +1,12 @@
+import { Link } from "react-router-dom";
 import { Typography } from "../../components";
 import styles from "./Footer.module.css";
-
-const PRIVACY_HREF = "#privacy";
-const TERMS_HREF = "#terms";
 
 export function Footer() {
   return (
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.upper}>
-        <a href="/" className={styles.logoLink} aria-label="WeJustMet home">
+        <Link to="/" className={styles.logoLink} aria-label="WeJustMet home">
           <img
             src="/logo/Logo-Horizontal.svg"
             alt=""
@@ -16,18 +14,18 @@ export function Footer() {
             height={18}
             className={styles.logoImg}
           />
-        </a>
+        </Link>
         <nav className={styles.links} aria-label="Legal">
-          <a href={PRIVACY_HREF} className={styles.link}>
+          <Link to="/privacy-policy" className={styles.link}>
             <Typography variant="desktop-capital-letters" color="fill_W478SF" as="span">
               Privacy Policy
             </Typography>
-          </a>
-          <a href={TERMS_HREF} className={styles.link}>
+          </Link>
+          <Link to="/terms" className={styles.link}>
             <Typography variant="desktop-capital-letters" color="fill_W478SF" as="span">
               Terms & Conditions
             </Typography>
-          </a>
+          </Link>
         </nav>
       </div>
       <div className={styles.divider} aria-hidden />

@@ -85,6 +85,13 @@
   letter-spacing: var(--mobile-titles-letter-spacing);
 }
 
+.mobile-subtitles-1 {
+  font-weight: var(--mobile-subtitles-1-font-weight);
+  font-size: var(--mobile-subtitles-1-font-size);
+  line-height: var(--mobile-subtitles-1-line-height);
+  letter-spacing: var(--mobile-subtitles-1-letter-spacing);
+}
+
 .mobile-subtitle-2 {
   font-weight: var(--mobile-subtitle-2-font-weight);
   font-size: var(--mobile-subtitle-2-font-size);
