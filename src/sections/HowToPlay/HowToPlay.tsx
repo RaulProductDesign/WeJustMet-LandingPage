@@ -6,20 +6,23 @@ const STEPS = [
   {
     step: "one",
     stepNum: 1,
-    title: "Gather your group (3–8 players)",
-    body: "Just the right amount—enough for laughs and a few surprising confessions, but not too many like at a wedding or too few like on an awkward date.",
+    label: "STEP ONE",
+    title: "Gather your group (3-8 players)",
+    body: "Just the right amount. Enough for laughs and a few surprising confessions, but not too many like at a wedding.",
   },
   {
     step: "two",
     stepNum: 2,
+    label: "STEP TWO",
     title: "Read the question out loud",
-    body: "One person becomes the official voice of the game. Everyone answers in turn. Order doesn't matter, stories do.",
+    body: "One person holds the app, reads a question, and picks who answers.",
   },
   {
     step: "three",
     stepNum: 3,
+    label: "STEP THREE",
     title: "Next question, next player",
-    body: "The reader moves on to the next question and a new player starts answering.",
+    body: "Go in order, or pick someone randomly. If a question sparks something in you, speak up. There are no strict rules here, the only goal is to get to know each other.",
   },
 ];
 
@@ -49,7 +52,7 @@ export function HowToPlay() {
         </header>
         <div className={styles.steps}>
           <AnimateIn delay={120}>
-          {STEPS.map(({ step, stepNum, title, body }) => (
+          {STEPS.map(({ step, stepNum, label, title, body }) => (
             <article key={step} className={styles.card}>
               <div className={styles.icon} aria-hidden>
                 <img
@@ -63,7 +66,7 @@ export function HowToPlay() {
               <div className={styles.cardContent}>
                 <span className={styles.stepLabel}>
                   <Typography variant="desktop-capital-letters" color="fill_SY29LS">
-                    Step {step}
+                    {label}
                   </Typography>
                 </span>
                 <h3 className={styles.stepTitle}>
